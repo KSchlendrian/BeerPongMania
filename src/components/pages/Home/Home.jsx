@@ -1,11 +1,20 @@
+import CountdownTimer from "./Countdown/CountdownTimer";
+import DateTimeDisplay from "./Countdown/DateTimeDisplay";
 import style from "./Home.module.scss";
+import React from "react";
 
 const Home = () => {
+  const startTime = new Date();
+
+  const dateBpmx = 3 * 24 * 60 * 60 * 1000;
+  const dateNow = new Date().getTime();
+  const dateTimeAfterThreeDays = dateBpmx + dateNow;
+
   return (
     <section className={style.home}>
       <h1>Home</h1>
       <section className={style.home_countdown}>
-        <h2>Hier wird der Countdown sein!</h2>
+        <CountdownTimer targetDate={dateTimeAfterThreeDays} />
       </section>
       <section className={style.home_text}>
         <p>
