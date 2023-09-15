@@ -1,4 +1,4 @@
-import style from "./turniere.module.scss";
+import style from "./Turniere.module.scss";
 
 const Turniere = () => {
   return (
