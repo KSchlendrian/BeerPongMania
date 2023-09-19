@@ -4,17 +4,14 @@ import style from "./Home.module.scss";
 import React from "react";
 
 const Home = () => {
-  const startTime = new Date();
-
-  const dateBpmx = 3 * 24 * 60 * 60 * 1000;
-  const dateNow = new Date().getTime();
-  const dateTimeAfterThreeDays = dateBpmx + dateNow;
+  const future = new Date("2024-04-06T16:00:00");
+  const dateBpmx = future.getTime();
 
   return (
     <section className={style.home}>
       <h1>Home</h1>
       <section className={style.home_countdown}>
-        <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+        <CountdownTimer targetDate={dateBpmx} />
       </section>
       <section className={style.home_text}>
         <p>
